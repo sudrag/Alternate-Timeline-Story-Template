@@ -1,0 +1,202 @@
+:: StoryTitle
+Template
+
+
+:: StoryData
+{
+  "ifid": "3D846761-5667-46C7-BDBD-7F2A9222FE97",
+  "format": "SugarCube",
+  "format-version": "2.36.1",
+  "start": "Passage Title1",
+  "zoom": 1
+}
+
+
+:: Game Over {"position":"1425,775","size":"100,100"}
+<<audio ":all" stop>>
+
+<<audio "test7" loop play>>
+
+Final Page
+
+<img src="images/image7.jpeg" alt="Description of image 7">
+
+[[Restart Game->Passage Title1]]
+
+<<audio ":all" stop>>
+
+<<audio "test7" loop play>>
+
+
+:: Passage Title1 {"position":"900,250","size":"100,100"}
+<<audio ":all" stop>>
+<<cacheaudio "test1" "./audio/test1.mp3">>
+
+<<audio "test1" loop play>>
+InsERt yOur tEXt hErE
+
+
+<img src="images/image1.jpg" alt="Description of Image 1">
+
+[[Button Label 1->Passage Title2]]
+[[Button Label 2->Passage Title4]]
+
+
+
+<<cacheaudio "test2" "./audio/test2.mp3">>
+<<cacheaudio "test3" "./audio/test3.mp3">>
+<<cacheaudio "test4" "./audio/test4.mp3">>
+<<cacheaudio "test5" "./audio/test5.mp3">>
+<<cacheaudio "test6" "./audio/test6.mp3">>
+<<cacheaudio "test7" "./audio/test7.mp3">>
+
+
+
+
+:: Passage Title2 {"position":"700,475","size":"100,100"}
+
+
+Insert Text here????????????????
+
+
+<img src="images/image2.jpg" alt="Description of Image 2">
+
+[[Button Label 3->Passage Title3]]
+
+<<audio ":all" stop>>
+
+<<audio "test2" loop play>>
+
+
+:: Passage Title3 {"position":"875,575","size":"100,100"}
+Insert Text here!!!!!!!!!!!!!!!
+
+<img src="images/image3.jpg" alt="Description of Image 3">
+
+[[Return to start->Passage Title1]] 
+[[Button Label 4->Passage Title5]]
+
+<<audio ":all" stop>>
+
+<<audio "test3" loop play>>
+
+
+:: Passage Title4 {"position":"1100,575","size":"100,100"}
+Insert Text Here(((!!___!!)))
+
+<img src="images/image4.jpg" alt="Description of Image 4">
+
+[[You win->Game Over]]
+
+<<audio ":all" stop>>
+
+<<audio "test5" loop play>>
+
+
+:: Passage Title5 {"position":"900,725","size":"100,100"}
+INSERT TEXT HERE!@#!@
+
+<img src="images/image5.jpg" alt="Description of Image 5">
+
+[[Previous Page->Passage Title3]]
+[[Button Label 6->Passage Title6]]
+
+<<audio ":all" stop>>
+
+<<audio "test4" loop play>>
+
+
+:: Passage Title6 {"position":"1175,775","size":"100,100"}
+Insert text here <>)><<<...
+
+<img src="images/image6.jpg" alt="Description of Image 6">
+
+[[You lose->Game Over]]
+
+<<audio ":all" stop>>
+
+<<audio "test6" loop play>>
+
+
+:: StoryScript [script]
+prerender["addPassageTitle"] = function (content) {
+    $(content).append('<h2 class="fancy-title">Passage: ' + passage() + '</h2>');
+};
+
+:: StoryStylesheet [stylesheet]
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #ccc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Fancy Title with Word-Art Effect */
+.fancy-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 3px 3px 6px #000000, 4px 4px 10px #aaaaaa;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Text Glow and Shadow Effect */
+.glowing-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+    margin-top: 20px;
+}
+
+/* Background Gradient */
+/* Background from URL */
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FFFFFF; /* White text color for high contrast */
+    font-family: 'Pacifico', cursive; /* Apply the Pacifico font globally */
+    text-shadow: 0 0 10px #aa11aa, 0 0 20px #aa11aa, 0 0 30px #aa11aa; /* Apply glowing effect to all text */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Modern Link/ Button Styles */
+a {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #38d111, #aab230);
+    padding: 12px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover {
+    background: linear-gradient(135deg, #aa1231, #aab712);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
